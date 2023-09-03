@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <h1 class="text-center">Read Operation.....</h1>
+        </div>
+        <div class="row mt-5">
+            <% rows.map((row)=>{ %>
+                <div class="col-lg-3 col-md-6 my-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%- row.email %></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"><%- row.password %></h6>
+                            <div class="btn-wrapper mt-4">
+                                <a href="/update-data/?id=<%- row.id %>" class="btn btn-success">Edit</a>
+                                <a href="/delete-data/?id=<%- row.id %>" class="btn btn-success">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
