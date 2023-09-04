@@ -59,7 +59,7 @@ app.post("/create.html", (req, res)=>{
     const email = req.body.email;
     const pass = req.body.pass;
     try{
-        connection.query("INSERT INTO data (id,email,password) VALUES(?,?,?)", ["", email, pass], (err,rows)=>{
+        connection.query("INSERT INTO data (email,password) VALUES(?,?)", [email, pass], (err,rows)=>{
             if(err) console.log(err)
             else res.redirect("/data")
         })
